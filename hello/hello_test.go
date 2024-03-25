@@ -1,6 +1,7 @@
 package hello
 
 import (
+	"fmt"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -40,4 +41,11 @@ func assertCorrectMessage(t testing.TB, exp, actual string) {
 	if exp != actual {
 		t.Errorf("expected %s but got %s", exp, actual)
 	}
+}
+
+func ExampleHello() {
+	result := Hello("Victor", "French")
+	fmt.Println(result)
+
+	//Output: Bonjour, Victor
 }
