@@ -1,6 +1,7 @@
 package mapa
 
 import (
+	"fmt"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -22,6 +23,13 @@ func TestSearch(t *testing.T) {
 	})
 }
 
+func ExampleDictionary_Search() {
+	dictionary := Dictionary{"hi": "how are you"}
+	actual, _ := dictionary.Search("hi")
+	fmt.Println(actual)
+	// Output: how are you
+}
+
 func TestAdd(t *testing.T) {
 	key, value := "hi", "how are you"
 
@@ -39,6 +47,13 @@ func TestAdd(t *testing.T) {
 		assertError(t, err, ErrorWordExists)
 		assertDefinition(t, dictionary, key, value)
 	})
+}
+
+func ExampleDictionary_Add() {
+	dictionary := Dictionary{}
+	err := dictionary.Add("hi", "how are you")
+	fmt.Println(err)
+	// Output: <nil>
 }
 
 func TestUpdate(t *testing.T) {
