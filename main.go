@@ -1,11 +1,7 @@
 package main
 
 import (
-	"log"
-	"net/http"
-	"os"
-
-	"github.com/victoryRo/learn-go-with-test/dependency"
+	"github.com/victoryRo/learn-go-with-test/mock"
 )
 
 func main() {
@@ -14,10 +10,12 @@ func main() {
 	// fmt.Println(hello.Hello("Maria", "Spanish"))
 	// fmt.Println(hello.Hello("angela", "French"))
 
-	dependency.Greet(os.Stdout, "Love")
-	log.Fatal(http.ListenAndServe(":5001", http.HandlerFunc(MyGreeterHandler)))
+	mock.LocalMain()
+
+	// dependency.Greet(os.Stdout, "Love")
+	// log.Fatal(http.ListenAndServe(":5001", http.HandlerFunc(MyGreeterHandler)))
 }
 
-func MyGreeterHandler(w http.ResponseWriter, r *http.Request) {
-	dependency.Greet(w, "world")
-}
+// func MyGreeterHandler(w http.ResponseWriter, r *http.Request) {
+// dependency.Greet(w, "world")
+// }
