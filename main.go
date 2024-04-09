@@ -1,16 +1,12 @@
 package main
 
-import (
-	"github.com/victoryRo/learn-go-with-test/mock"
-)
-
 func main() {
 	// fmt.Println(hello.Hello("Victor", ""))
 	// fmt.Println(hello.Hello("", ""))
 	// fmt.Println(hello.Hello("Maria", "Spanish"))
 	// fmt.Println(hello.Hello("angela", "French"))
 
-	mock.LocalMain()
+	// mock.LocalMain()
 
 	// dependency.Greet(os.Stdout, "Love")
 	// log.Fatal(http.ListenAndServe(":5001", http.HandlerFunc(MyGreeterHandler)))
